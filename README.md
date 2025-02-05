@@ -1,26 +1,57 @@
-# Linear Regression
-## 1) Generating the Dataset
-A synthetic dataset is created using make_regression() from sklearn.datasets, with:
-n_samples=100: 100 random samples
-n_features=1: A single feature for simple linear regression
-noise=20: Adds some randomness to the data
-random_state=4: Ensures reproducibility
-The dataset consists of one input feature and one output variable.
+# Linear Regression Implementation
 
-## 2) Splitting the Data
-The dataset is divided into training (80%) and testing (20%) subsets using train_test_split().
+## Overview
+This project demonstrates the implementation of Linear Regression from scratch using Python and NumPy. The model is trained on a synthetic dataset generated using Scikit-learn and evaluated for performance.
 
-## 3) Training the Linear Regression Model
-The Linear_regression class is implemented to learn a linear relationship between X and y.
-The model is trained using gradient descent to optimize weights (w) and bias (b).
-The loss function used is Mean Squared Error (MSE), and gradients are computed to update the parameters.
+## Dataset
+A random dataset is generated using `datasets.make_regression()` with the following parameters:
+- **Number of Samples:** 100
+- **Number of Features:** 1 (Simple Linear Regression)
+- **Noise:** 20 (to introduce variability in the data)
+- **Random State:** 4 (for reproducibility)
 
-## 4) Making Predictions
-The learned weights and bias are used to compute y_predicted = wX + b for the test set.
+## Steps in the Implementation
 
-## 5) Evaluating the Model
-The model's performance is measured using Mean Squared Error (MSE):
- 
-## 6) Results and Visualization
-The dataset is visualized using scatter plots to show data distribution.
-A regression line is plotted to show how well the model fits the data.
+### 1. Loading the Dataset
+The dataset is generated using the Scikit-learn `datasets.make_regression()` function, creating an independent variable `X` and a dependent variable `y`.
+
+### 2. Splitting the Data
+The dataset is divided into training (80%) and testing (20%) subsets using `train_test_split()`.
+
+### 3. Training the Linear Regression Model
+The model is implemented in a separate Python script (`linear_regression.py`) and follows these steps:
+- Initializes the weights and bias to zero.
+- Uses gradient descent to update weights iteratively.
+- Minimizes the Mean Squared Error (MSE) as the cost function.
+
+### 4. Making Predictions
+For a given test sample, the predicted values are computed using:
+\[ y_{predicted} = X \cdot w + b \]
+where `w` represents weights and `b` represents bias.
+
+### 5. Evaluating the Model
+The predictions are compared with the actual labels, and the Mean Squared Error (MSE) is computed using:
+\[ MSE = \frac{1}{n} \sum (y - y_{predicted})^2 \]
+
+### 6. Results and Visualization
+- A scatter plot of the dataset is generated to visualize the data distribution.
+- The best-fit regression line is plotted to show how well the model fits the data.
+
+## Accuracy Measure
+The Mean Squared Error (MSE) is used as the primary metric to evaluate model performance. A lower MSE indicates better model performance.
+
+## Dependencies
+- NumPy
+- Matplotlib
+- Scikit-learn
+
+## Running the Code
+Run the following command to train and evaluate the model:
+```bash
+python main.py
+```
+where `main.py` is the script that loads data, trains the model, and evaluates predictions.
+
+## Conclusion
+This implementation demonstrates a simple but effective approach to understanding the workings of Linear Regression using Python. The model can be extended to multiple features for a more complex analysis.
+
