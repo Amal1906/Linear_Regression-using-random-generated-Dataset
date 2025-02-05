@@ -45,13 +45,6 @@ The Mean Squared Error (MSE) is used as the primary metric to evaluate model per
 - Matplotlib
 - Scikit-learn
 
-## Running the Code
-Run the following command to train and evaluate the model:
-```bash
-python main.py
-```
-where `main.py` is the script that loads data, trains the model, and evaluates predictions.
-
 ## Conclusion
 This implementation demonstrates a simple but effective approach to understanding the workings of Linear Regression using Python. The model can be extended to multiple features for a more complex analysis.
 
